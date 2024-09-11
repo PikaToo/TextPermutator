@@ -31,7 +31,7 @@ class FilePermutator {
         void createOutputFile(std::string path_to_output);
 
     private:
-        // Removes the line number from a well-formatted instruction line and returns it.
+        // Removes the line number from a correctly formatted instruction line and returns it.
         int popLineNumber(std::string& instruction);
 
         // ifstream containing the contents of the instructions file and text base file respectively.

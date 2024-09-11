@@ -62,7 +62,7 @@ void FilePermutator::processInstruction(std::string instruction_file_name) {
 }
 
 void FilePermutator::createOutputFile(std::string path_to_output) {
-    std::ofstream out ("output.txt");
+    std::ofstream out (path_to_output);
     for (std::string line : internal_output_file_) {
         out << line << std::endl;
     }
