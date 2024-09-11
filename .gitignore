@@ -1,3 +1,10 @@
-.vscode
+# Files used as input; meant to stay as blank files.
+latex_base.tex
+instructions.txt
+
+# Files created during use.
 output.txt
 main.exe
+
+# Misc.
+.vscode
