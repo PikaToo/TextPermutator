@@ -40,7 +40,7 @@ class FilePermutator {
 
         // Path strings.
         std::string path_to_instruction_directory_;
-        std::string path_to_text_bases_;
+        std::string path_to_text_base_;
 
         // Internal output file. Used to construct the output file.
         std::vector<std::string> internal_output_file_;

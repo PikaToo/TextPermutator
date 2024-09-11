@@ -1,18 +1,18 @@
 #include "file_permutator.h"
 
-FilePermutator::FilePermutator(std::string path_to_instructions_directory, std::string path_to_text_bases) {
+FilePermutator::FilePermutator(std::string path_to_instructions_directory, std::string path_to_text_base) {
     // Storing strings in class. This could be in an initializer list but would make the line very long.
     path_to_instruction_directory_ = path_to_instructions_directory;
-    path_to_text_bases_ = path_to_text_bases;
+    path_to_text_base_ = path_to_text_base;
 
     // Opening files.
     instructions_ = std::ifstream(path_to_instructions_directory);
-    text_base_ = std::ifstream(path_to_text_bases);
+    text_base_ = std::ifstream(path_to_text_base);
 
     // If failed to open files, send error warning.
 
     if (!text_base_.is_open()) {
-        std::cerr << "Failed to open file: " << path_to_text_bases << std::endl;
+        std::cerr << "Failed to open file: " << path_to_text_base << std::endl;
         return;
     }
 

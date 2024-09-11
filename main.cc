@@ -23,7 +23,7 @@ Output:
 using namespace std;
 
 #define INSTRUCTIONS_DIRECTORY   "instructions/"
-#define TEXT_BASE_FILE           "latex_base.tex"
+#define TEXT_BASE_FILE           "base_file.txt"
 #define OUTPUT_FILE              "output.tex"
 
 int main(int argc, char** argv) {
