@@ -5,9 +5,6 @@ Additionally contains #define parameters linked to desired directory, base file,
 Requirements:
 - C++17.
 
-Compile as: g++ -o main main.cc file_permutator.cc initial_indexed_string_list.cc
-Run with ./main.exe <instruction_name_1.txt> <instruction_name_2.tex> ...
-
 Input: 
 - Arguments containing file name of each desired instruction (e.g., 1.txt, addText.tex)
 - Instructions must be of the following form:
@@ -20,7 +17,6 @@ Input:
 
 Output:
 - File containing text base file with all added instructions.
-
 */
 
 #include "file_permutator.h"
