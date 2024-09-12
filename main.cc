@@ -5,6 +5,9 @@ Requirements:
 Main program to generate file permutation. 
 Additionally contains #define parameters linked to desired directory, base file, and output file.
 
+Compile as: g++ -o main main.cc file_permutator.cc hashmapped_linked_list.cc
+Run with ./main.exe <instruction_name_1.txt> <instruction_name_2.tex> ...
+
 Input: 
 - Arguments containing file name of each desired instruction (e.g., 1.txt, addText.tex)
 - Instructions must be of the following form:
@@ -24,7 +27,7 @@ using namespace std;
 
 #define INSTRUCTIONS_DIRECTORY   "instructions/"
 #define TEXT_BASE_FILE           "base_file.txt"
-#define OUTPUT_FILE              "output.tex"
+#define OUTPUT_FILE              "output.txt"
 
 int main(int argc, char** argv) {
     // Initialize FilePermutator.

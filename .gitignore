@@ -1,6 +1,8 @@
 # Files created during use.
 output.txt
 main.exe
+instructions/
+
 
 # Misc.
 .vscode
