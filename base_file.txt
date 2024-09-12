@@ -1,24 +1,2 @@
-%-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-% Modification : Rayed Hamayun
-%------------------------
-
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\input{glyphtounicode}
-\usepackage[dvipsnames]{xcolor}
-% \usepackage{fontawesome}
-% {\faLink} 
+This is is the base file!
+Add text here that will later be added onto further by the text in instructions. 
