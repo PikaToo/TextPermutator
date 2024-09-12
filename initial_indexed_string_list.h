@@ -1,5 +1,5 @@
-#ifndef HASHMAPPED_LINKED_LIST_H
-#define HASHMAPPED_LINKED_LIST_H
+#ifndef INITIAL_INDEXED_STRING_LIST_H
+#define INITIAL_INDEXED_STRING_LIST_H
 
 #include <string>
 #include <fstream>
@@ -65,4 +65,4 @@ class InitialIndexedStringList {
         int final_line_;
 };
 
-#endif // HASHMAPPED_LINKED_LIST_H
+#endif // INITIAL_INDEXED_STRING_LIST_H
