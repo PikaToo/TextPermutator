@@ -32,7 +32,7 @@ void FilePermutator::processInstruction(std::string instruction_file_name) {
     // Apply instruction.
     for (std::string line; getline(instructions, line); ) {
         int line_to_add = popLineNumber(line);
-        internal_output_file_.addNode(line_to_add, line);
+        internal_output_file_.addString(line_to_add, line);
     }
 }
 

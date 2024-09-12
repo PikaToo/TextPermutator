@@ -31,7 +31,7 @@ InitialIndexedStringList::InitialIndexedStringList(std::ifstream& starting_file)
 /*
 Adds a string as a node. 
 */
-void InitialIndexedStringList::addNode(int line_position, std::string const& line_text) {
+void InitialIndexedStringList::addString(int line_position, std::string const& line_text) {
     // If failed to read, exit.
     if (line_position == -1) std::cerr << "Instruction failed to follow proper formatting:" << std::endl << line_text << std::endl;
 
