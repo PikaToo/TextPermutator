@@ -28,9 +28,6 @@ InitialIndexedStringList::InitialIndexedStringList(std::ifstream& starting_file)
     final_line_ = line_number - 1;
 }
 
-/*
-Adds a string as a node. 
-*/
 void InitialIndexedStringList::addString(int line_position, std::string const& line_text) {
     // If failed to read, exit.
     if (line_position == -1) std::cerr << "Instruction failed to follow proper formatting:" << std::endl << line_text << std::endl;
@@ -55,13 +52,26 @@ void InitialIndexedStringList::addString(int line_position, std::string const& l
     }
 }
 
-/*
-*/
-void InitialIndexedStringList::createOutputFile(std::string path_to_output) {
-    std::ofstream out (path_to_output);
-    ListNode* cur = head_->next;
-    while (cur) {
-        out << cur->value << std::endl;
-        cur = cur->next;
-    }
+// Iterator.
+InitialIndexedStringList::iterator::iterator(ListNode* p) : p{p} {}
+
+bool InitialIndexedStringList::iterator::operator!=(const iterator& other) const {
+    return p!= other.p;
+}
+
+std::string& InitialIndexedStringList::iterator::operator*() {
+    return p -> value;
+}
+
+InitialIndexedStringList::iterator& InitialIndexedStringList::iterator::operator++() {
+    p = p->next; 
+    return *this; 
+}
+
+InitialIndexedStringList::iterator InitialIndexedStringList::begin() {
+    return iterator{head_->next}; 
+}
+
+InitialIndexedStringList::iterator InitialIndexedStringList::end() {
+    return iterator{nullptr};
 }

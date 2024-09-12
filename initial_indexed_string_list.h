@@ -5,6 +5,16 @@
 #include <fstream>
 #include <unordered_map>
 
+class ListNode {
+    public:
+        std::string value;
+        ListNode* next;
+        ListNode* prev;
+        ListNode() : value{0}, next{nullptr}, prev{nullptr} {}
+        ListNode(std::string value) : value{value}, next{nullptr}, prev{nullptr} {}
+        ListNode(std::string value, ListNode* next, ListNode* prev) : value{value}, next{next}, prev{prev} {}
+};
+
 /*
 A class that holds a list of strings that is only indexed once at the start. 
     All subsequent additions to the list will be placed and stored, but will not change indexing.
@@ -26,20 +36,28 @@ class InitialIndexedStringList {
         */
         void addString(int index, std::string const& line_text);
 
-        void createOutputFile(std::string path_to_output);
+        /*
+        Iterator through the class intended primarily for range-based for loops. 
+        */
+        class iterator {
+            private: 
+                ListNode* p;
+                iterator(ListNode* p); 
+                
+            public: 
+                bool operator!=(const iterator& other) const; 
+                std::string& operator*(); 
+                iterator& operator++();
+            
+            friend class InitialIndexedStringList;
+        };
+
+        iterator begin();
+        iterator end();
 
     // Internal implementation details. 
     private:
         // Linked list used internally. 
-        class ListNode {
-            public:
-                std::string value;
-                ListNode* next;
-                ListNode* prev;
-                ListNode() : value{0}, next{nullptr}, prev{nullptr} {}
-                ListNode(std::string value) : value{value}, next{nullptr}, prev{nullptr} {}
-                ListNode(std::string value, ListNode* next, ListNode* prev) : value{value}, next{next}, prev{prev} {}
-};
         ListNode* head_;
 
         // Map of line number to where in linked list item should be inserted. 

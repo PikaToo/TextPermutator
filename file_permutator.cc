@@ -37,7 +37,10 @@ void FilePermutator::processInstruction(std::string instruction_file_name) {
 }
 
 void FilePermutator::createOutputFile(std::string path_to_output) {
-    internal_output_file_.createOutputFile(path_to_output);
+    std::ofstream out (path_to_output);
+    for (std::string& p : internal_output_file_) {
+        out << p << std::endl;
+    }
 }
 
 int FilePermutator::popLineNumber(std::string& instruction) {

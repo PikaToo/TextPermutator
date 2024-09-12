@@ -5,7 +5,7 @@ Requirements:
 Main program to generate file permutation. 
 Additionally contains #define parameters linked to desired directory, base file, and output file.
 
-Compile as: g++ -o main main.cc file_permutator.cc hashmapped_linked_list.cc
+Compile as: g++ -o main main.cc file_permutator.cc initial_indexed_string_list.cc
 Run with ./main.exe <instruction_name_1.txt> <instruction_name_2.tex> ...
 
 Input: 
