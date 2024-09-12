@@ -16,7 +16,7 @@ FilePermutator::FilePermutator(std::string path_to_instructions_directory, std::
         return;
     }
 
-    internal_output_file_ = HashmappedLinkedList(text_base_);
+    internal_output_file_ = InitialIndexedStringList(text_base_);
 }
 
 void FilePermutator::processInstruction(std::string instruction_file_name) {

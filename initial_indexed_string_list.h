@@ -6,14 +6,14 @@
 #include <unordered_map>
 
 /*
-
+A class that holds a linked list of strings and 
 */
-class HashmappedLinkedList {
+class InitialIndexedStringList {
     public:
         /*
         */
-        HashmappedLinkedList();
-        HashmappedLinkedList(std::ifstream& starting_file);
+        InitialIndexedStringList();
+        InitialIndexedStringList(std::ifstream& starting_file);
 
         /*
         */

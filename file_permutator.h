@@ -1,7 +1,7 @@
 #ifndef FILE_PERMUTATOR_H
 #define FILE_PERMUTATOR_H
 
-#include "hashmapped_linked_list.h"
+#include "initial_indexed_string_list.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -43,7 +43,7 @@ class FilePermutator {
         std::string path_to_text_base_;
 
         // Internal output file. Used to construct the output file.
-        HashmappedLinkedList internal_output_file_;
+        InitialIndexedStringList internal_output_file_;
 };
 
 #endif // FILE_PERMUTATOR_H

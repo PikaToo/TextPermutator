@@ -1,8 +1,8 @@
-#include "hashmapped_linked_list.h"
+#include "initial_indexed_string_list.h"
 #include <iostream>
 
-HashmappedLinkedList::HashmappedLinkedList() {}
-HashmappedLinkedList::HashmappedLinkedList(std::ifstream& starting_file) {
+InitialIndexedStringList::InitialIndexedStringList() {}
+InitialIndexedStringList::InitialIndexedStringList(std::ifstream& starting_file) {
     // Head is a dummy head not actually part of the file. 
     // We set it as 0 to be able to access it later.
     head_ = new ListNode(); 
@@ -31,7 +31,7 @@ HashmappedLinkedList::HashmappedLinkedList(std::ifstream& starting_file) {
 /*
 Adds a string as a node. 
 */
-void HashmappedLinkedList::addNode(int line_position, std::string const& line_text) {
+void InitialIndexedStringList::addNode(int line_position, std::string const& line_text) {
     // If failed to read, exit.
     if (line_position == -1) std::cerr << "Instruction failed to follow proper formatting:" << std::endl << line_text << std::endl;
 
@@ -57,7 +57,7 @@ void HashmappedLinkedList::addNode(int line_position, std::string const& line_te
 
 /*
 */
-void HashmappedLinkedList::createOutputFile(std::string path_to_output) {
+void InitialIndexedStringList::createOutputFile(std::string path_to_output) {
     std::ofstream out (path_to_output);
     ListNode* cur = head_->next;
     while (cur) {

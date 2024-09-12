@@ -23,8 +23,6 @@ Output:
 
 #include "file_permutator.h"
 
-using namespace std;
-
 #define INSTRUCTIONS_DIRECTORY   "instructions/"
 #define TEXT_BASE_FILE           "base_file.txt"
 #define OUTPUT_FILE              "output.txt"
