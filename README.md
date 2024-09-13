@@ -24,7 +24,9 @@ Add additional files into the instructions subdirectory. You can rename this dir
 
 Each file needs to follow proper syntax:
 - The first character(s) of the file should be a line number.
-  -  This line number must be between 1 and the line number of the final non-empty line of your base file.
+  -  This line number must be between 1 and the 1 + line number of the final non-empty line of your base file.
+      - You write such that the newly placed line would get that line number- i.e., it is placed just before the existing version of that line.  
+      - Writing to 1 + the final line will append to the end of the file.
   -  The line number you write should be based on where you want the text to appear in the the base file.
   -  The program automatically accounts for lines shifting when more text is added, so only place it where you would like it relative to the base file. 
   - Telling two instructions to place at the same line will cause them to be one after the other in order, with the first instruction being the first in the text document. 
@@ -43,3 +45,14 @@ Run with `./main.exe <instruction_name_1.txt> <instruction_name_2.tex> ...`
 You can rename the output file from main.cc (labelled OUTPUT_FILE in the #define).
 
 Ensure you include the file extension of each file. 
+
+
+## Implementation
+The main noteworthy implementation note is the use of a unique data structure created for this project, called the Initial Indexed String List (IISL). 
+
+On the high level, it works as follows:
+- On initialization with a file stream, the contents of the file stream are stored in an indexed string list with each line getting a string in the list. Only these initially added strings are indexed. 
+- Additionally added strings after this are placed after the index in which they are specified to be inserted, placed before the index (but after any other previously additionally added strings). These additionally added strings are not indexed and cannot be accessed. No indices are moved during this process and all initial strings remain the same.
+- You may iterate over the entire structure to get all the strings, both indexed and non-indexed.
+
+This is implemented as a linked list, with a hashmap being used to index specific linked list nodes. Further implementation details can be seen in the code. 
