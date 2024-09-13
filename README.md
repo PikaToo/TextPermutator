@@ -40,7 +40,7 @@ See an example of instructions at sample.txt
 
 
 ### 4. Running the Program
-Run with `./main.exe <instruction_name_1.txt> <instruction_name_2.tex> ...`
+Run with `./main.exe <instruction_name_1.txt> <instruction_name_2.tex> ...` or `./main <instruction_name_1.txt> <instruction_name_2.tex> ...` depending on your system.
 
 You can rename the output file from main.cc (labelled OUTPUT_FILE in the #define).
 
