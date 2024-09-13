@@ -49,12 +49,12 @@ int FilePermutator::popLineNumber(std::string& instruction) {
     int line_number;
 
     if (iss >> line_number) {
-        // Discard leading whitespace.
-        iss >> std::ws;
+        // Discard single whitespace.
+        iss.ignore();
 
         // Read value.
         std::string rest_of_string;
-        getline(iss >> std::ws, rest_of_string);
+        getline(iss, rest_of_string);
 
         // Replace line to now exclude the line number. 
         instruction = rest_of_string;

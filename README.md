@@ -28,7 +28,7 @@ Each file needs to follow proper syntax:
   -  The line number you write should be based on where you want the text to appear in the the base file.
   -  The program automatically accounts for lines shifting when more text is added, so only place it where you would like it relative to the base file. 
   - Telling two instructions to place at the same line will cause them to be one after the other in order, with the first instruction being the first in the text document. 
-- The next character should be a whitespace character (e.g., a space).
+- The next character should be a single space.
 - After this, add the text you would like to be added at the line number. 
 
 
