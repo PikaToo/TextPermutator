@@ -24,8 +24,12 @@ InitialIndexedStringList::InitialIndexedStringList(std::ifstream& starting_file)
         line_number++;
     }
 
-    // Final line is inclusive of the final line. 
-    final_line_ = line_number - 1;
+    // Create tail that is one line further in than last to allow appending to the end of the file.
+    tail_ = new ListNode("0", nullptr, cur);
+    items_[line_number] = tail_;
+
+    // Final line includes tail. 
+    final_line_ = line_number;
 }
 
 void InitialIndexedStringList::addString(int line_position, std::string const& line_text) {
@@ -73,5 +77,5 @@ InitialIndexedStringList::iterator InitialIndexedStringList::begin() {
 }
 
 InitialIndexedStringList::iterator InitialIndexedStringList::end() {
-    return iterator{nullptr};
+    return iterator{tail_};
 }

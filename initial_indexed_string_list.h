@@ -59,6 +59,7 @@ class InitialIndexedStringList {
     private:
         // Linked list used internally. 
         ListNode* head_;
+        ListNode* tail_;
 
         // Map of line number to where in linked list item should be inserted. 
         std::unordered_map<int, ListNode*> items_;
