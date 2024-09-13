@@ -1,2 +1,3 @@
 This is is the base file!
 Add text here that will later be added onto further by the text in instructions. 
+Remember that empty lines at the end of this file are ignored when the program takes input.
