@@ -28,8 +28,8 @@ class InitialIndexedStringList {
             an InitialIndexedStringList, but the class will be useless. The starting string values are required to have
             an initial string list, which are obtained from an ifstream. The ifstream is mutated until fully iterated. 
         */
-        InitialIndexedStringList();
-        InitialIndexedStringList(std::ifstream& starting_file);
+        InitialIndexedStringList(std::string path_to_text_base);
+        ~InitialIndexedStringList();
 
         /*
         Adds an unindexed string to the string list. 

@@ -1,8 +1,16 @@
 #include "initial_indexed_string_list.h"
 #include <iostream>
 
-InitialIndexedStringList::InitialIndexedStringList() {}
-InitialIndexedStringList::InitialIndexedStringList(std::ifstream& starting_file) {
+InitialIndexedStringList::InitialIndexedStringList(std::string path_to_text_base) {
+    // Opening files.
+    std::ifstream starting_file = std::ifstream(path_to_text_base);
+
+    // If failed to open files, send error warning.
+    if (!starting_file.is_open()) {
+        std::cerr << "Failed to open file: " << path_to_text_base << std::endl;
+        return;
+    }
+
     // Head is a dummy head not actually part of the file. 
     // We set it as 0 to be able to access it later.
     head_ = new ListNode(); 
@@ -30,6 +38,18 @@ InitialIndexedStringList::InitialIndexedStringList(std::ifstream& starting_file)
 
     // Final line includes tail. 
     final_line_ = line_number;
+}
+
+InitialIndexedStringList::~InitialIndexedStringList() {
+    ListNode* current = head_;
+    ListNode* next_node = nullptr;
+
+    while (current) {
+        next_node = current->next;
+        delete current;
+        current = next_node;
+    }
+
 }
 
 void InitialIndexedStringList::addString(int line_position, std::string const& line_text) {

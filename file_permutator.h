@@ -36,11 +36,9 @@ class FilePermutator {
 
         // ifstream containing the contents of the instructions file and text base file respectively.
         std::ifstream instructions_;
-        std::ifstream text_base_;
 
         // Path strings.
         std::string path_to_instruction_directory_;
-        std::string path_to_text_base_;
 
         // Internal output file. Used to construct the output file.
         InitialIndexedStringList internal_output_file_;
